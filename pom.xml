@@ -94,13 +94,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Releases Nexus Repository</name>
+	      <name>TrustBank</name>
 	      <url>http://18.205.28.156:8081/repository/trustBank-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Snapshot Nexus Repository </name>
+	      <name>TrustBank</name>
 	      <url>http://18.205.28.156:8081/repository/trustBank-snapshot/</url>
 	    </snapshotRepository>
 	    
