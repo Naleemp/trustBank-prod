@@ -94,7 +94,7 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>TrustBank</name>
+	      <name>nexus</name>
 	      <url>http://18.205.28.156:8081/repository/trustBank-release/</url>
 	    </repository>
 	    
