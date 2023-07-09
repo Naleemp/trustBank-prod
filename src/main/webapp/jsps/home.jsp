@@ -8,7 +8,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to TrustBank,Bakoteh Branch.</h1>
+<h1 align="center">Welcome to TrustBank Web application,Bakoteh Branch.</h1>
 <h1 align="center">The only Reliable Bank.</h1>
 <hr>
 <br>
