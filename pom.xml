@@ -100,7 +100,7 @@
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>TrustBank</name>
+	      <name>nexus</name>
 	      <url>http://3.89.123.63:8081/repository/trustBank-snapshot/</url>
 	    </snapshotRepository>
 	    
