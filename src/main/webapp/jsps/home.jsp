@@ -31,10 +31,8 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="" alt="" width="150">
 	</span>
 	<span style="font-weight: bold;">
-                Landmark Technology, 
-		Toronto, Canada
-		+1 437 215 2483,
-		mylandmarktech@gmail.com
+               NaleempInfoTech, 
+		Gambia
 		<br>
 		<a href="mailto:simonpeter@nalempinfotech.com ">Mail to NaleempInfoTech</a>
 	</span>
