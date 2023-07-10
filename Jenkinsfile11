@@ -23,6 +23,7 @@ git "https://github.com/Naleemp/trustBank-prod"
       }
   }
  stage('7deploy2Prod'){
+ sh "sleep 30"
     deploy adapters: [tomcat9(credentialsId: 'tomcatCredential', path: '', url: 'http://54.198.208.150:8080/')], contextPath: null, war: 'target/*war'
   }
 stage('8emailNotification'){
