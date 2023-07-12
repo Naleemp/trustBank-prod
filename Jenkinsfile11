@@ -10,7 +10,7 @@ git "https://github.com/Naleemp/trustBank-prod"
   }
   
   stage('4uploadArtifacts'){
-    sh "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/TrustBankBuildTool/bin/mvn clean package sonar:sonar"
+    sh "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/TrustBankBuildTool/bin/mvn deploy"
   } 
    stage('5deploy2UAT'){
     sh "echo 'deploy to UAT'  "
