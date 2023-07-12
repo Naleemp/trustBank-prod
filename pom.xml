@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>nexus</name>
-	      <url>http://52.207.219.170:8081/repository/trustBank-release/</url>
+	      <url>http://44.212.39.173:8081/repository/trustBank-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>nexus</name>
-	      <url>http://52.207.219.170:8081/repository/trustBank-snapshot/</url>
+	      <url>http://44.212.39.173:8081/repository/trustBank-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
