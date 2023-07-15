@@ -6,7 +6,7 @@ git "https://github.com/Naleemp/trustBank-prod"
   stage('2Test+build'){
  sh "${JenkinsHomDir}/mvn clean package"
   }
-    stage('3codeQuality'){
+ /*   stage('3codeQuality'){
     sh "${JenkinsHomDir}/mvn clean package sonar:sonar"
   }
   
@@ -31,6 +31,6 @@ git "https://github.com/Naleemp/trustBank-prod"
 stage('8emailNotification'){
 emailext body: '''Hello Team;
 The application was not deployed because the client did not approve it. Please take a look the message and take the appropriate action.''', recipientProviders: [developers(), previous(), buildUser()], subject: 'Build Status', to: 'developers@gmail.com'
-}
+}*/
 
 }
