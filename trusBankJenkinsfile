@@ -34,3 +34,96 @@ The application was not deployed because the client did not approve it. Please t
 }*/
 
 }
+
+
+
+Jenkins+Docker Integration
+
+http://44.211.205.31:8080/
+modou 
+admin123
+
+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
+
+Download windows service wrapper
+
+
+
+
+Docker Job:
+pipeline{
+  agent any 
+  stages {
+   
+   stage('Final Deployment'){
+      steps{
+          script{
+             sh "echo application ready for deployment"
+             sh "docker rm -f webapp"
+             sh "sleep 20"
+             sh "docker run --name webapp -d -p 600:8080 naleemp/tomcat:4"
+          }
+        
+      }
+    }
+  }
+}
+
+
+
+
+
+pipeline{
+  agent any 
+  tools {
+    maven "mavenBuildTool"
+  }  
+  stages {
+    stage('1GetCode'){
+        steps{
+        sh "echo 'cloning the latest application version' "
+        git "https://github.com/Naleemp/trustBank-prod"
+      }
+    }
+    stage('3Test+Build'){
+      steps{
+        sh "echo 'running JUnit-test-cases' "
+        sh "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/mavenBuildTool/bin/mvn clean package"
+      }
+    }
+    stage('4CodeQuality'){
+       steps{
+        sh "echo 'Perfoming CodeQualityAnalysis' "
+        sh "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/mavenBuildTool/bin/mvn package sonar:sonar"
+      }
+    } 
+    stage('5uploadNexus'){
+      steps{
+        sh"/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/mavenBuildTool/bin/mvn deploy"
+      }
+    }  
+   stage('Create Docker Image'){
+       steps{
+          script{
+           sh "echo 'Pusing the image to dockerhub' "
+          sh "docker build -t naleemp/tomcat:4 ." 
+        }
+        
+      }
+    }
+     stage('Push Docker Image'){
+       steps{
+          script{
+              withCredentials([string(credentialsId: 'testcredentials', variable: 'testcredentials')]) {
+               sh "sudo docker login -u naleemp -p ${testcredentials}"
+            }
+            sh "sudo docker push naleemp/tomcat:4"
+        }
+        
+       // sh "docker login - u naleemp -p Admin123Sim"
+        
+      }
+    }
+
+  }
+}
