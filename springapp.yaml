@@ -84,7 +84,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: qa
   name: springapp
 spec:
   selector:
